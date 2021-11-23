@@ -25,7 +25,7 @@ public class TodoController {
     @PostMapping
     public ResponseEntity<Todo> createPost(@RequestBody TodoForm todoForm) {
         Todo todo = new Todo();
-        todo.setTitle(todoForm.getTitle());
+        todo.setPosition(todoForm.getPosition());
         todo.setContent(todoForm.getContent());
         todo.setDone(false);
         todo.setCreatedAt(new Date());
@@ -51,7 +51,7 @@ public class TodoController {
     @PutMapping("/{id}")
     public ResponseEntity<Todo> updatePost(@PathVariable Long id,@RequestBody TodoForm todoForm) {
         Todo todo = postService.findById(id).get();
-        todo.setTitle(todoForm.getTitle());
+        todo.setPosition(todoForm.getPosition());
         todo.setContent(todoForm.getContent());
         todo.setDone(todoForm.isDone());
         todo.setUpdatedAt(new Date());

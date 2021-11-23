@@ -11,7 +11,7 @@ import java.util.Date;
 public class TodoForm {
     private Long id;
 
-    private String title;
+    private Long position;
 
     private String content;
 
